@@ -1,0 +1,7 @@
+@import url('css/font-awesome.min.css');
+
+.fa {display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:inherit;cursor:pointer}
+.fa:before {color:inherit}
+#ckeditor-fa-icons {text-align:center;white-space:normal;width:98%;height:350px;overflow:auto}
+#ckeditor-fa-icons a {display:inline-block;width:75px;padding:5px 0;text-align:center;vertical-align:top}
+#ckeditor-fa-icons a span {font-size:28px;display:block;text-align:center}
