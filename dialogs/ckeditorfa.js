@@ -51,7 +51,7 @@ function faIcons(fas, ty) {
 	return icons;
 }
 return {
-	title:'FontAwesome Icons',
+	title:'FontAwesome5 Icons',
 	minWidth:500,
 	minHeight:400,
 	resizable:false,
