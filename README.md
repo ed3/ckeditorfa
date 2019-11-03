@@ -1,5 +1,5 @@
-# ckeditorfa v.2.0
-ckeditor fontAwesome plugin (fontAwesome 4.7)
+# ckeditorfa
+ckeditor fontAwesome plugin (Font Awesome 4.7)
 
 # settings
 1. add in your html page font-awesome.min.css
@@ -8,4 +8,4 @@ ckeditor fontAwesome plugin (fontAwesome 4.7)
    - config.contentsCss = '/{your_path}/font-awesome.min.css';
 
 # info
-ckeditorfa is former ckeditor_fa [https://github.com/ArmGono/ckeditor_fa]
+for Font Awesome v.5.11 use branche fa5
