@@ -1,5 +1,5 @@
 # ckeditorfa v.2.0
-ckeditor fontAwesome plugin
+ckeditor fontAwesome plugin (fontAwesome 4.7)
 
 # settings
 1. add in your html page font-awesome.min.css
