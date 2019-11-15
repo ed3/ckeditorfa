@@ -5,6 +5,7 @@ ckeditor fontAwesome plugin (Font Awesome 4.7)
 1. add in your html page font-awesome.min.css
 2. add in your config.js from ckeditor folder:
    - config.extraPlugins = 'ckeditorfa';
+   - config.allowedContent = true;
    - config.contentsCss = '/{your_path}/font-awesome.min.css';
 
 # info
