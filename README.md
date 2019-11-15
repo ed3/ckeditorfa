@@ -6,6 +6,7 @@ ckeditor fontAwesome 5 plugin with Font Awesome v.5.11.2
 2. rename folder ckeditorfa to ckeditorfa5
 3. add in your config.js from ckeditor folder:
    - config.extraPlugins = 'ckeditorfa5';
+   - config.allowedContent = true;
    - config.contentsCss = '/{your_path}/all.min.css';
 
 # info
