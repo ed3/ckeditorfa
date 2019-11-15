@@ -138,6 +138,7 @@ return {
 		if(dialog.getValueOf('font-awesome', 'size') !='')
 		style += 'font-size:' + dialog.getValueOf('font-awesome', 'size') + 'px';
 		if(style) icon.setAttribute('style', style);
+		icon.setAttribute('aria-hidden', 'true');
 		editor.insertElement(icon);
 	},
 	onCancel:function () {
