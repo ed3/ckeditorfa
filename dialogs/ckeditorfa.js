@@ -4,13 +4,6 @@ function klick(el) {
 	el.className = el.className.replace('active', '');
 	el.className += ' active';
 }
-function setColor(color){
-	el = document.getElementById('ckeditor-fa-icons');
-	el = el.getElementsByTagName('span');
-	for(i = 0; i < el.length; i ++){
-		el[i].setAttribute('style', 'color:' + color);
-	}
-};
 function searchIcon(val){
 	var fas = document.getElementById('ckeditor-fa-icons');
 	var a = fas.getElementsByTagName('a');
@@ -68,13 +61,9 @@ return {
 			id:'colorChooser',
 			className:'colorChooser',
 			label:'Color',
-			onKeyUp:function(e){
-			setColor(e.sender.$.value);
-			},
 			setup:function(widget){
 			var color = widget.data.color != '' ? widget.data.color:'';
 			this.setValue(color);
-			setColor(color);
 			},
 			commit:function(widget){
 			widget.setData('color', this.getValue());
@@ -85,7 +74,6 @@ return {
 			onClick:function(){
 			editor.getColorFromDialog(function(color){
 			document.getElementsByClassName('colorChooser')[0].getElementsByTagName('input')[0].value = color;
-			setColor(color);
 			}, this);
 			}
 		},
