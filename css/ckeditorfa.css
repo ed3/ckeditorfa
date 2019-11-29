@@ -1,5 +1,4 @@
-.fab,.far,.fas {display:inline-block;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:inherit;cursor:pointer}
-.fab,.far,.fas {font-size:14px}
+.fab,.far,.fas {display:inline-block;font-size:14px;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:inherit;cursor:pointer}
 .far,.fas {font-family:"Font Awesome 5 Free"}
 .fab {font-family:"Font Awesome 5 Brands"}
 .far {font-weight:400}
