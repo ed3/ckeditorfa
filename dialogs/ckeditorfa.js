@@ -1,11 +1,7 @@
 function klick(el) {
 	var className = el.getAttribute('title');
-	document.getElementsByClassName('fontawesomeClass')[0].getElementsByTagName('input')[0].value = el.getAttribute('title');
-	var icons = document.getElementById('ckeditor-fa-icons');
-	var icon = icons.getElementsByTagName('span');
-	for (var i = 0; i < icon.length; i++) {
-	icon[i].className = icon[i].className.replace('active', '');
-	}
+	document.getElementsByClassName('fontawesomeClass')[0].getElementsByTagName('input')[0].value = className;
+	el.className = el.className.replace('active', '');
 	el.className += ' active';
 }
 function searchIcon(val){
@@ -85,22 +81,46 @@ return {
 		}
 		]
 		},
-		{type:'text',id:'faicon',className:'fontawesomeClass',validate:CKEDITOR.dialog.validate.notEmpty("Select fontAwesome icon"),setup:function(widget){this.setValue(widget.data.class != '' ? widget.data.class:'');},commit:function(widget){widget.setData('class', this.getValue());}
+		{
+		type:'hbox',
+		widths:['15%','15%','15%','15%','40%'],
+		children:[
+		{
+		type:'select',id:'fixwidth',className:'faSelect',label:'Fixed Width',items:[['No'],['Yes']],'default':'No',
+			commit:function(widget){widget.setData('fixwidth', this.getValue());}
+		},
+		{
+		type:'select',id:'bordered',className:'faSelect',label:'Bordered',items:[['No'],['Yes']],'default':'No',
+			commit:function(widget){widget.setData('bordered', this.getValue());}
+		},
+		{
+		type:'select',id:'spinning',className:'faSelect',label:'Spinning',items:[['No'],['Yes']],'default':'No',
+			commit:function(widget){widget.setData('spinning', this.getValue());}
+		},
+		{
+		type:'select',id:'rotating',className:'faSelect',label:'Rotating',items:[['No'],['fa-rotate-90'],['fa-rotate-180'],['fa-rotate-270'],['fa-flip-horizontal'],['fa-flip-vertical']],'default':'No',
+			commit:function(widget){widget.setData('rotating', this.getValue());}
+		},
+		{type:'text',id:'faicon',className:'fontawesomeClass',label:'Selected',validate:CKEDITOR.dialog.validate.notEmpty("Select fontAwesome icon"),setup:function(widget){this.setValue(widget.data.class != '' ? widget.data.class:'');},commit:function(widget){widget.setData('class', this.getValue());}
+		}
+		]
 		},
 		{type:'html',html:'<div id="ckeditor-fa-icons">' + faIcons + '</div>'}
 	]
 	}],
 	onOk:function () {
 		clear();
-		var dialog = this;
-		var icon = editor.document.createElement('span');
-		icon.setAttribute('class', 'fa fa-' + dialog.getValueOf('font-awesome', 'faicon'));
+		var dialog = this,icon = editor.document.createElement('span'),cls='';
+		if(dialog.getValueOf('font-awesome','fixwidth') == "Yes") cls += ' fa-fw';
+		if(dialog.getValueOf('font-awesome','bordered') == "Yes") cls += ' fa-border';
+		if(dialog.getValueOf('font-awesome','spinning') == "Yes") cls += ' fa-spin';
+		if(dialog.getValueOf('font-awesome','rotating') != "No") cls += ' '+dialog.getValueOf('font-awesome','rotating');
+		icon.setAttribute('class', 'fa fa-' + dialog.getValueOf('font-awesome', 'faicon')+cls);
 		var style='';
-		if(dialog.getValueOf('font-awesome', 'colorChooser') !='')
-		style += 'color:' + dialog.getValueOf('font-awesome', 'colorChooser')+';';
-		if(dialog.getValueOf('font-awesome', 'size') !='')
-		style += 'font-size:' + dialog.getValueOf('font-awesome', 'size') + 'px';
+		if(dialog.getValueOf('font-awesome', 'colorChooser') !='') style += 'color:' + dialog.getValueOf('font-awesome', 'colorChooser')+';';
+		if(dialog.getValueOf('font-awesome', 'size') !='') style += 'font-size:' + dialog.getValueOf('font-awesome', 'size') + 'px;';
 		if(style) icon.setAttribute('style', style);
+		icon.setAttribute('aria-hidden','true');
 		editor.insertElement(icon);
 	},
 	onCancel:function () {
