@@ -9,4 +9,4 @@ ckeditor fontAwesome plugin (Font Awesome 4.7)
    - config.contentsCss = '/{your_path}/font-awesome.min.css';
 
 # info
-for Font Awesome v.5.11 use branche fa5
+for Font Awesome v.5.x use branch fa5
