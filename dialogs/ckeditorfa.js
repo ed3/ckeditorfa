@@ -1,7 +1,7 @@
 function klick(el) {
 	var className = el.childNodes[0].getAttribute('class');
 	document.getElementsByClassName('fontawesomeClass')[0].getElementsByTagName('input')[0].value = className;
-	el.className = el.className.replace('active', '');
+	el.className = el.className.replace('active','');
 	el.className += ' active';
 }
 function searchIcon(val){
@@ -22,7 +22,7 @@ function clear(){
 	var activeIcon = icons.getElementsByClassName('active');
 	var icon = icons.getElementsByTagName('a');
 	for (var i=0; i < activeIcon.length; ++i) {
-		activeIcon[i].className = activeIcon[i].className.replace('active', '');
+		activeIcon[i].className = activeIcon[i].className.replace('active','');
 	}
 	for(j=0; j < icon.length; ++j){
 		icon[j].className = '';
@@ -92,19 +92,19 @@ return {
 		children:[
 		{
 		type:'select',id:'fixwidth',className:'faSelect',label:'Fixed Width',items:[['No'],['Yes']],'default':'No',
-			commit:function(widget){widget.setData('fixwidth', this.getValue());}
+			commit:function(widget){widget.setData('fixwidth',this.getValue());}
 		},
 		{
 		type:'select',id:'bordered',className:'faSelect',label:'Bordered',items:[['No'],['Yes']],'default':'No',
-			commit:function(widget){widget.setData('bordered', this.getValue());}
+			commit:function(widget){widget.setData('bordered',this.getValue());}
 		},
 		{
 		type:'select',id:'spinning',className:'faSelect',label:'Spinning',items:[['No'],['Yes']],'default':'No',
-			commit:function(widget){widget.setData('spinning', this.getValue());}
+			commit:function(widget){widget.setData('spinning',this.getValue());}
 		},
 		{
 		type:'select',id:'rotating',className:'faSelect',label:'Rotating',items:[['No'],['fa-rotate-90'],['fa-rotate-180'],['fa-rotate-270'],['fa-flip-horizontal'],['fa-flip-vertical'],['fa-flip-both']],'default':'No',
-			commit:function(widget){widget.setData('rotating', this.getValue());}
+			commit:function(widget){widget.setData('rotating',this.getValue());}
 		}
 		]
 		},
@@ -130,7 +130,7 @@ return {
 			document.getElementById('ckeditor-fa-icons').innerHTML = faIcons(faSolid,'s');
 			}
 		},
-		{type:'text',id:'faicon',className:'fontawesomeClass',validate:CKEDITOR.dialog.validate.notEmpty("Select fontAwesome icon"),setup:function(widget){this.setValue(widget.data.class != '' ? widget.data.class:'');},commit:function(widget){widget.setData('class', this.getValue());}
+		{type:'text',id:'faicon',className:'fontawesomeClass',validate:CKEDITOR.dialog.validate.notEmpty("Select fontAwesome icon"),onLoad: function(){this.getInputElement().setAttribute('readOnly',true);},setup:function(widget){this.setValue(widget.data.class != '' ? widget.data.class:'');},commit:function(widget){widget.setData('class', this.getValue());}
 		}
 		]
 		},
