@@ -1,4 +1,4 @@
-CKEDITOR.plugins.add('ckeditorfa',{
+CKEDITOR.plugins.add('ckeditorfa5',{
 icons:'ckeditorfa',
 init:function(editor){
 editor.addCommand('ckeditorfa', new CKEDITOR.dialogCommand('ckeditorFaDialog',{allowedContent:'span(!fa-*)'}));
