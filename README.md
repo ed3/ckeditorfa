@@ -1,5 +1,5 @@
 # ckeditorfa5
-ckeditor fontAwesome 5 plugin with Font Awesome v.5.x (current branch use Font Awesome **v.5.13.1** or **v.5.14.0**)
+ckeditor fontAwesome 5 plugin with Font Awesome v.5.x (current branch is compatible with Font Awesome **v.5.13.1** and **v.5.14.0**)
 
 # settings
 1. add in your html page all.min.css
