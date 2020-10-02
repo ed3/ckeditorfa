@@ -4,7 +4,7 @@
 .far {font-weight:400}
 .fas {font-weight:900}
 .fab:before,.far:before,.fas:before {color:inherit}
-#ckeditor-fa-icons {text-align:center;white-space:normal;width:98%;height:350px;overflow:auto}
-#ckeditor-fa-icons a {display:inline-block;width:75px;padding:5px 0;text-align:center;vertical-align:top}
+#ckeditor-fa-icons {text-align:center;white-space:normal;width:100%;height:350px;overflow:auto}
+#ckeditor-fa-icons a {display:inline-block;width:72px;padding:5px 0;text-align:center;vertical-align:top}
 #ckeditor-fa-icons a span {font-size:28px;display:block;text-align:center}
 .faSelect {width:100%}
