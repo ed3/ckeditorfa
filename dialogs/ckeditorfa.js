@@ -88,7 +88,7 @@ return {
 		},
 		{
 		type:'hbox',
-		widths:['25%','25%','25%','25%'],
+		widths:['15%','15%','15%','15%','40%'],
 		children:[
 		{
 		type:'select',id:'fixwidth',className:'faSelect',label:'Fixed Width',items:[['No'],['Yes']],'default':'No',
@@ -105,32 +105,33 @@ return {
 		{
 		type:'select',id:'rotating',className:'faSelect',label:'Rotating',items:[['No'],['fa-rotate-90'],['fa-rotate-180'],['fa-rotate-270'],['fa-flip-horizontal'],['fa-flip-vertical'],['fa-flip-both']],'default':'No',
 			commit:function(widget){widget.setData('rotating',this.getValue());}
+		},
+		{
+		type:'text',id:'faicon',className:'faSelect',label:'Selected',validate:CKEDITOR.dialog.validate.notEmpty("Select fontAwesome icon"),onLoad: function(){this.getInputElement().setAttribute('readOnly',true);},setup:function(widget){this.setValue(widget.data.class != '' ? widget.data.class:'');},commit:function(widget){widget.setData('class', this.getValue());}
 		}
 		]
 		},
 		{
 		type:'hbox',
-		widths:['15%','15%','15%','50%'],
+		widths:['33%','33%','33%'],
 		children:[
 		{
-		type:'button',label:'Brands '+Object.keys(faBrands).length,
+		type:'button',className:'faSelect',label:'Brands '+Object.keys(faBrands).length,
 			onClick:function(){
 			document.getElementById('ckeditor-fa-icons').innerHTML = faIcons(faBrands,'b');
 			}
 		},
 		{
-		type:'button',label:'Regular '+Object.keys(faRegular).length,
+		type:'button',className:'faSelect',label:'Regular '+Object.keys(faRegular).length,
 			onClick:function(){
 			document.getElementById('ckeditor-fa-icons').innerHTML = faIcons(faRegular,'r');
 			}
 		},
 		{
-		type:'button',label:'Solid '+Object.keys(faSolid).length,
+		type:'button',className:'faSelect',label:'Solid '+Object.keys(faSolid).length,
 			onClick:function(){
 			document.getElementById('ckeditor-fa-icons').innerHTML = faIcons(faSolid,'s');
 			}
-		},
-		{type:'text',id:'faicon',className:'fontawesomeClass',validate:CKEDITOR.dialog.validate.notEmpty("Select fontAwesome icon"),onLoad: function(){this.getInputElement().setAttribute('readOnly',true);},setup:function(widget){this.setValue(widget.data.class != '' ? widget.data.class:'');},commit:function(widget){widget.setData('class', this.getValue());}
 		}
 		]
 		},
