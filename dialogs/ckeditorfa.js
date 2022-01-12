@@ -1,6 +1,7 @@
 function klick(el) {
 	var className = el.childNodes[0].getAttribute('class');
-	document.getElementsByClassName('fontawesomeClass')[0].getElementsByTagName('input')[0].value = className;
+	var dialog = CKEDITOR.dialog.getCurrent();
+	dialog.getContentElement('font-awesome','faicon').setValue(className);
 	el.className = el.className.replace('active','');
 	el.className += ' active';
 }
