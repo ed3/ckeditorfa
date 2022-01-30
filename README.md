@@ -12,3 +12,5 @@ CKEDITOR.dtd.$removeEmpty['span'] = false;
 
 # info
 for Font Awesome v.4.7 use branch **fa4**
+
+for Font Awesome v.6 use branch fa6
