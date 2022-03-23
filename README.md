@@ -1,5 +1,5 @@
 # ckeditorfa6
-ckeditor fontAwesome 6 plugin with Font Awesome v.6.x (current branch is compatible with Font Awesome **v.6**)
+ckeditor fontAwesome 6 plugin with Font Awesome free v.6.x (current branch is compatible with Font Awesome **v.6**)
 
 # settings
 1. add in your html page all.min.css
