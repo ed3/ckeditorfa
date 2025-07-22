@@ -1,4 +1,4 @@
-# ckeditorfa6
+# ckeditorfa
 ckeditor fontAwesome 7 plugin with Font Awesome free v.7.x (current branch is compatible with Font Awesome **v.7**)
 
 # settings
