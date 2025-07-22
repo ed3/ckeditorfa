@@ -1,5 +1,5 @@
 # ckeditorfa6
-ckeditor fontAwesome 6 plugin with Font Awesome free v.6.x (current branch is compatible with Font Awesome **v.6**)
+ckeditor fontAwesome 7 plugin with Font Awesome free v.7.x (current branch is compatible with Font Awesome **v.7**)
 
 # settings
 1. add in your html page all.min.css
@@ -14,3 +14,5 @@ CKEDITOR.dtd.$removeEmpty['span'] = false;
 for Font Awesome v.4.7 use branch **fa4**
 
 for Font Awesome v.5.15 use branch **fa5**
+
+for Font Awesome v.6.7 use branch **fa6**
