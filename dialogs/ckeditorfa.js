@@ -45,7 +45,7 @@ function faIcons(fas, ty) {
 	return icons;
 }
 return {
-	title:'FontAwesome6 Icons',
+	title:'FontAwesome Icons',
 	minWidth:500,
 	minHeight:400,
 	resizable:false,
@@ -55,8 +55,23 @@ return {
 	elements:[
 		{
 		type:'hbox',
-		widths:['25%','10%','15%','50%'],
+		widths:['20%','15%','10%','15%','40%'],
 		children:[
+		{
+			type:'select',id:'packs',className:'faSelect',label:'Packs',items:[['Brands'],['Regular'],['Solid']],'default':'Brands',
+			onChange:function(e){
+				var value = this.getValue();
+				var container = document.getElementById('ckeditor-fa-icons');
+				container.innerHTML = '';
+				if(value === 'Regular'){
+					container.innerHTML = faIcons(faRegular,'r');
+				}else if(value === 'Solid') {
+					container.innerHTML = faIcons(faSolid,'s');
+				}else{
+					container.innerHTML = faIcons(faBrands,'b');
+				}
+			}
+		},
 		{
 			type:'text',
 			id:'colorChooser',
@@ -109,30 +124,6 @@ return {
 		},
 		{
 		type:'text',id:'faicon',className:'faSelect',label:'Selected',validate:CKEDITOR.dialog.validate.notEmpty("Select fontAwesome icon"),onLoad: function(){this.getInputElement().setAttribute('readOnly',true);},setup:function(widget){this.setValue(widget.data.class != '' ? widget.data.class:'');},commit:function(widget){widget.setData('class', this.getValue());}
-		}
-		]
-		},
-		{
-		type:'hbox',
-		widths:['33%','33%','33%'],
-		children:[
-		{
-		type:'button',className:'faSelect',label:'Brands '+Object.keys(faBrands).length,
-			onClick:function(){
-			document.getElementById('ckeditor-fa-icons').innerHTML = faIcons(faBrands,'b');
-			}
-		},
-		{
-		type:'button',className:'faSelect',label:'Regular '+Object.keys(faRegular).length,
-			onClick:function(){
-			document.getElementById('ckeditor-fa-icons').innerHTML = faIcons(faRegular,'r');
-			}
-		},
-		{
-		type:'button',className:'faSelect',label:'Solid '+Object.keys(faSolid).length,
-			onClick:function(){
-			document.getElementById('ckeditor-fa-icons').innerHTML = faIcons(faSolid,'s');
-			}
 		}
 		]
 		},
