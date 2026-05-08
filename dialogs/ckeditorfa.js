@@ -55,7 +55,7 @@ return {
 	elements:[
 		{
 		type:'hbox',
-		widths:['25%','10%','15%','50%'],
+		widths:['20%','15%','10%','15%','40%'],
 		children:[
 		{
 			type:'select',id:'packs',className:'faSelect',label:'Packs',items:[['Brands'],['Regular'],['Solid']],'default':'Brands',
